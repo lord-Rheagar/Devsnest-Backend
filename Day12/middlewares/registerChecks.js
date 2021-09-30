@@ -6,16 +6,16 @@ const registerInitialCheck=(req,res,next)=>{
 
     if( typeof email === 'string' && 
         typeof password === 'string' &&
-        typeof confirmPassword === 'string' &&
+        typeof confirmPassword === 'string'&&
         email.length>0 &&
         password.length>8 &&
-        confirmPassword===password &&
-        emailValidate(email) &&
-        passwordValidate(password)
+        confirmPassword===password 
+        // emailValidate(email) &&
+        // passwordValidate(password)
       ){
           next();
       } else{
-      res.status(401).send("Abe thik se information daal")
+      res.status(401).send("Please give correct information")
     }
 }
 

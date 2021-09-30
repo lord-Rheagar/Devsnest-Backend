@@ -1,4 +1,4 @@
-const User = require('../models/user')
+const User = require('../models/mongo')
 const bcrypt = require('bcrypt');
 
 const saltRounds =10
@@ -6,7 +6,7 @@ const register=async(req,res)=>{
   const{email, password} = req.body;
 
   try{
-        const alreadyExits= await User.findOne({where:{email}})
+        const alreadyExits= await User.findOne({where:{email}}).exec
 
         if(alreadyExits)
         {
