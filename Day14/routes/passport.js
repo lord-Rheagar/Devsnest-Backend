@@ -69,7 +69,7 @@ router.get(
   userAuth,
   checkRole(["superadmin"]),
   async (req, res) => {
-    return res.json("Hello Super Admin");
+    return res.json(`Hello Super Admin ${req.body.username}`);
   }
 );
 

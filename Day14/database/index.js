@@ -4,8 +4,9 @@ const {
     sequelize_username,
     sequelize_password,
     sequelize_host,
-    sequelize_password,
-    sequelize_dialect
+
+    sequelize_dialect,
+    SECRET
  }=require("../config")
 
 const sequelize = new Sequelize(
@@ -14,7 +15,7 @@ const sequelize = new Sequelize(
        sequelize_password,
     {
         host:sequelize_host,
-        dialect:sequelize_dialect
+        dialect:"postgres"
     }
 )
 
@@ -29,5 +30,3 @@ sequelize.sync();
            console.error("Connection with database failed")
        }
 })()
-
-module.exports= sequelize
