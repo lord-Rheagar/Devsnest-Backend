@@ -1,20 +1,12 @@
 const {Sequelize} = require("sequelize")
-const {
-    sequelize_database,
-    sequelize_username,
-    sequelize_password,
-    sequelize_host,
 
-    sequelize_dialect,
-    SECRET
- }=require("../config")
 
 const sequelize = new Sequelize(
-    sequelize_database,
-       sequelize_username,
-       sequelize_password,
+       "postgres",
+       "postgres",
+       "12345678",
     {
-        host:sequelize_host,
+        host:"localhost",
         dialect: "postgres"
     }
 )
